@@ -3,12 +3,22 @@
 char	**sl_split_map(char *raw)
 {
 	char	**grid;
+	int		i;
 
 	grid = ft_split(raw, '\n');
 	if (!grid)
 		sl_error("Map split failed");
+	i = 0;
+	while (grid[i])
+	{
+		int	len = ft_strlen(grid[i]);
+		if (len > 0 && grid[i][len - 1] == '\r')
+			grid[i][len - 1] = '\0';
+		i++;
+	}
 	return (grid);
 }
+
 
 int	sl_count_height(char **grid)
 {

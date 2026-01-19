@@ -90,5 +90,7 @@ void	sl_set_player(t_game *g, int x, int y);
 int		sl_scan_row_for_player(t_game *g, int y);
 void	sl_find_player_position(t_game *g);
 void	sl_player_dummy(void);
+void	sl_strip_cr(char *line);
+
 
 #endif

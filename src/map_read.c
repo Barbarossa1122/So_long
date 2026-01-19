@@ -35,7 +35,9 @@ char	*sl_read_line(int fd)
 	char	*tmp;
 	int		n;
 
-	line = NULL;
+	line = ft_strdup("");
+	if (!line)
+		return (NULL);
 	buf[1] = '\0';
 	n = read(fd, buf, 1);
 	while (n > 0)
@@ -47,8 +49,14 @@ char	*sl_read_line(int fd)
 			break ;
 		n = read(fd, buf, 1);
 	}
+	if (n <= 0 && line[0] == '\0')
+	{
+		free(line);
+		return (NULL);
+	}
 	return (line);
 }
+
 
 char	*sl_read_file(int fd)
 {
@@ -56,7 +64,9 @@ char	*sl_read_file(int fd)
 	char	*line;
 	char	*tmp;
 
-	all = NULL;
+	all = ft_strdup("");
+	if (!all)
+		return (NULL);
 	line = sl_read_line(fd);
 	while (line)
 	{
@@ -68,6 +78,7 @@ char	*sl_read_file(int fd)
 	}
 	return (all);
 }
+
 
 char	*sl_load_raw_map(char *file)
 {
