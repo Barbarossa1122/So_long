@@ -46,6 +46,8 @@ int	sl_exit_game(t_game *g)
 	sl_free_game(g);
 	if (g->win)
 		mlx_destroy_window(g->mlx, g->win);
+	mlx_destroy_display(g->mlx);
+	free(g->mlx);
 	exit(0);
 	return (0);
 }

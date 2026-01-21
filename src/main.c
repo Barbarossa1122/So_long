@@ -4,6 +4,7 @@ int	main(int argc, char **argv)
 {
 	t_game	g;
 
+	ft_bzero(&g, sizeof(t_game));
 	if (argc != 2)
 		sl_error("Usage: ./so_long <map.ber>");
 	sl_parse_map(&g.map, argv[1]);

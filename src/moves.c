@@ -9,8 +9,12 @@ void	sl_move_to(t_game *g, int nx, int ny)
 		return ;
 	if (tile == 'C')
 		g->map.collectibles--;
-	if (tile == 'E' && g->map.collectibles == 0)
-		sl_exit_game(g);
+	if (tile == 'E')
+	{
+		if (g->map.collectibles == 0)
+			sl_exit_game(g);
+		return ;
+	}
 	g->map.grid[g->player_y][g->player_x] = '0';
 	g->map.grid[ny][nx] = 'P';
 	g->player_x = nx;
