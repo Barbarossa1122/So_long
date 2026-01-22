@@ -13,6 +13,7 @@ SRCS = src/main.c \
 	   src/errors.c \
 	   src/map_read.c \
 	   src/map_parse.c \
+	   src/map_parse_2.c \
 	   src/map_check.c \
 	   src/map_player.c \
 	   src/mlx_setup.c \
@@ -44,8 +45,5 @@ fclean: clean
 	@echo "Full clean completed."
 
 re: fclean all
-
-bonus:
-	@echo "No bonuses yet."
 
 .PHONY: all clean fclean re bonus
