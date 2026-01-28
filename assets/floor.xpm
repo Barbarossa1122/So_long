@@ -5,10 +5,10 @@ static char *floor[] = {
 ". c #0A1430", /* Blu scuro (Linee griglia secondarie) */
 "X c #004F54", /* Ciano spento (Laser lontano/ombra) */
 "o c #00F2FF", /* Ciano Neon (Laser centrale) */
-"                                                                ",
-"                                                                ",
-"                                                                ",
-"                                                                ",
+"    o                                                           ",
+"    o                                                           ",
+"    o                                                           ",
+"    o                                                           ",
 "    o                                                           ",
 "    o                                                           ",
 "ooooo oooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",

@@ -38,16 +38,22 @@ void	sl_free_map(t_map *map)
 void	sl_free_game(t_game *g)
 {
 	sl_free_map(&g->map);
-	/* Qui in futuro aggiungerai mlx_destroy_image se necessario */
 }
 
 int	sl_exit_game(t_game *g)
 {
+	if (!g)
+		exit(0);
+
 	sl_free_game(g);
 	if (g->win)
 		mlx_destroy_window(g->mlx, g->win);
-	mlx_destroy_display(g->mlx);
-	free(g->mlx);
+	if (g->mlx)
+	{
+		mlx_destroy_display(g->mlx);
+		free(g->mlx);
+		g->mlx = NULL;
+	}
 	exit(0);
 	return (0);
 }
