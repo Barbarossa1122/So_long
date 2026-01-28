@@ -21,7 +21,7 @@ void	sl_move_to(t_game *g, int nx, int ny)
 	g->player_y = ny;
 	g->moves++;
 	ft_putnbr_fd(g->moves, 1);
-	write(1, "\n", 1);
+	write(1, "\r", 1);
 }
 
 void	sl_move_up(t_game *g)
